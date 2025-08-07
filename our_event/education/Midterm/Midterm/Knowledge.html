@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../Midterm/css/education.css" />
+    <title>Knowledge</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(
+          to right,
+          #668ecddf,
+          #859dc4df
+        ); /* Adjust colors as needed */
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+        color: #000000;
+        margin-bottom: 30px;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+      }
+      .card {
+        background: #062c6ddf;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+        cursor: pointer;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      }
+      .card img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .card p {
+        padding: 15px;
+        margin: 0;
+        text-align: center;
+        color: #ffffff;
+        font-size: 1.1em;
+      }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+      }
+      .pagination a {
+        text-decoration: none;
+        padding: 10px 15px;
+        margin: 0 5px;
+        border: 1px solid #007bff;
+        color: #097df9;
+        border-radius: 5px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .pagination a:hover {
+        background-color: #007bff;
+        color: white;
+      }
+      */ .footer-links {
+        list-style: none;
+        padding: 0;
+      }
+      .footer-links li {
+        display: inline;
+        margin: 0 10px;
+      }
+      .social-media img {
+        height: 20px; /* Adjust icon size */
+        margin: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>ព្រឹត្តិការណ៍ចំណេះដឹង និងការអប់រំ</h1>
+      <div class="grid" id="cardGrid">
+        <!-- Cards will be dynamically inserted here -->
+      </div>
+      <div class="pagination" id="pagination"></div>
+    </div>
+    <div class="footer">
+      <section class="footer1">
+        <div class="footer-row">
+          <div class="footer-col">
+            <h4>Info</h4>
+            <ul class="links">
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Compressions</a></li>
+              <li><a href="#">Customers</a></li>
+              <li><a href="#">Service</a></li>
+              <li><a href="#">Collection</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Explore</h4>
+            <ul class="links">
+              <li><a href="#">Free Designs</a></li>
+              <li><a href="#">Latest Designs</a></li>
+              <li><a href="#">Themes</a></li>
+              <li><a href="#">Popular Designs</a></li>
+              <li><a href="#">Art Skills</a></li>
+              <li><a href="#">New Uploads</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Legal</h4>
+            <ul class="links">
+              <li><a href="#">Customer Agreement</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">GDPR</a></li>
+              <li><a href="#">Security</a></li>
+              <li><a href="#">Testimonials</a></li>
+              <li><a href="#">Media Kit</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-col">
+            <h4>Newsletter</h4>
+            <p>
+              Subscribe to our newsletter for a weekly dose of news, updates,
+              helpful tips, and exclusive offers.
+            </p>
+            <form action="#">
+              <input type="text" placeholder="Your email" required />
+              <button type="submit">SUBSCRIBE</button>
+            </form>
+            <div class="icons">
+              <i class="fa-brands fa-facebook-f"></i>
+              <i class="fa-brands fa-twitter"></i>
+              <i class="fa-brands fa-linkedin"></i>
+              <i class="fa-brands fa-github"></i>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      const cards = [
+        {
+          img: "../Midterm/Image/event1.jpg",
+          text: "ការអប់រំ និងបណ្តុះបណ្តាលបច្ចេកទេស និងវិជ្ជាជីវៈនៅកម្ពុជា៖ សារៈសំខាន់ បញ្ហាប្រឈម និងផ្លូវឆ្ពោះទៅមុខ",
+          link: "../Midterm/event/Event1.html",
+        },
+        {
+          img: "../Midterm/Image/event2.jpg",
+          text: "AUPP ក្នុងវេទិកា និងពិព័រណ៍ឧត្តមសិក្សាកម្ពុជា ឆ្នាំ២០២៤!",
+          link: "../Midterm/event/Event2.html",
+        },
+        {
+          img: "../Midterm/Image/event3.jpg",
+          text: "កម្ពុជា កូរ៉េខាងត្បូង ពិភាក្សាអំពីកិច្ចសហប្រតិបត្តិការលើវិស័យអប់រំឌីជីថល",
+          link: "../Midterm/event/Event3.html",
+        },
+        {
+          img: "../Midterm/Image/event4.jpg",
+          text: "គេហទំព័រសំខាន់ៗសម្រាប់ការរៀនអនឡាញ",
+          link: "../Midterm/event/Event4.html",
+        },
+        {
+          img: "../Midterm/Image/event5.jpg",
+          text: "ការ​សម្រេច​ក្តី​សុបិន​មិន​មែន​ជា​រឿង​ងាយ​ស្រួល​ទេ នាយ​ឧ​ត្ត​ម​សេនីយ៍ ហ៊ុន ម៉ា​ណែ​ត ប្រាប់​សិស្ស​",
+          link: "../Midterm/event/Event5.html",
+        },
+        {
+          img: "../Midterm/Image/event6.jpg",
+          text: "និស្សិត​បាន​ជំរុញ​ឲ្យ​ធ្វើ​សកម្មភាព​មនុស្សធម៌",
+          link: "../Midterm/event/Event6.html",
+        },
+        {
+          img: "../Midterm/Image/event7.jpg",
+          text: "CamDEBATE ប្រកាសជើងឯកសម្រាប់ឆ្នាំ 2019 - តើអ្នកបន្ទាប់សម្រាប់ឆ្នាំ 2020 ទេ?",
+          link: "../Midterm/event/Event7.html",
+        },
+        {
+          img: "../Midterm/Image/event8.jpg",
+          text: "ក្រុមនិស្សិតប្រកបដោយភាពច្នៃប្រឌិតភ្លឺនៅ 2024 SmartStart Hackathon",
+          link: "../Midterm/event/Event8.html",
+        },
+        {
+          img: "../Midterm/Image/event9.jpg",
+          text: "ក្រុមនិស្សិតប្រកបដោយភាពច្នៃប្រឌិតភ្លឺនៅ 2024 SmartStart Hackathon",
+          link: "../Midterm/event/Event9.html",
+        },
+        {
+          img: "../Midterm/Image/event10.jpg",
+          text: "ក្រុមនិស្សិតប្រកបដោយភាពច្នៃប្រឌិតភ្លឺនៅ 2024 SmartStart Hackathon",
+          link: "../Midterm/event/Event10.html",
+        },
+        {
+          img: "../Midterm/Image/event11.jpg",
+          text: "ក្រុមនិស្សិតប្រកបដោយភាពច្នៃប្រឌិតភ្លឺនៅ 2024 SmartStart Hackathon",
+          link: "../Midterm/event/Event11.html",
+        },
+      ];
+
+      const cardsPerPage = 6;
+      let currentPage = 1;
+
+      function renderCards() {
+        const grid = document.getElementById("cardGrid");
+        grid.innerHTML = ""; // Clear previous cards
+
+        const start = (currentPage - 1) * cardsPerPage;
+        const end = start + cardsPerPage;
+        const paginatedCards = cards.slice(start, end);
+
+        paginatedCards.forEach((card) => {
+          const cardDiv = document.createElement("div");
+          cardDiv.className = "card";
+          cardDiv.onclick = () => (location.href = card.link);
+
+          cardDiv.innerHTML = `
+                      <img src="${card.img}" alt="${card.text}">
+                      <p>${card.text}</p>
+                  `;
+          grid.appendChild(cardDiv);
+        });
+      }
+
+      function renderPagination() {
+        const pagination = document.getElementById("pagination");
+        pagination.innerHTML = ""; // Clear previous pagination
+
+        const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+        for (let i = 1; i <= totalPages; i++) {
+          const pageLink = document.createElement("a");
+          pageLink.href = "#";
+          pageLink.innerText = i;
+          pageLink.onclick = (e) => {
+            e.preventDefault();
+            currentPage = i;
+            renderCards();
+            renderPagination();
+          };
+          if (i === currentPage) {
+            pageLink.style.fontWeight = "bold";
+          }
+          pagination.appendChild(pageLink);
+        }
+      }
+
+      renderCards();
+      renderPagination();
+    </script>
+  </body>
+</html>
